@@ -155,6 +155,36 @@
         </div>
       </div>
 
+<!-- ELANOVA IMAGE STUDIO -->
+<section id="image-studio" class="image-studio hidden">
+  <div class="image-studio-header">
+    <div class="image-studio-icon">✦</div>
+    <h2>ELANOVA Image Studio</h2>
+    <p>Turn your imagination into stunning AI images.</p>
+  </div>
+
+  <form id="image-form" class="image-studio-panel">
+    <label for="image-prompt">Describe your image</label>
+
+    <textarea
+      id="image-prompt"
+      maxlength="2000"
+      required
+      placeholder="Describe the image you want to create..."
+    ></textarea>
+
+    <button type="submit" class="image-generate-btn">
+      ✦ Generate Image
+    </button>
+  </form>
+
+  <div
+    id="image-result"
+    class="image-result"
+    aria-live="polite"
+  ></div>
+</section>
+
       <form id="composer" class="composer">
         <textarea
           id="prompt"
