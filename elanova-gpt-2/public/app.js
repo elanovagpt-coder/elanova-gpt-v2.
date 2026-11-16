@@ -1,3 +1,4 @@
+
 const $ = (id) => document.getElementById(id);
 const welcome = $('welcome');
 const workspace = $('workspace');
@@ -35,21 +36,22 @@ $('tools').addEventListener('click', () => notify('AI Tools are planned for a fu
 function resetChat() {
   if (busy) return notify('Please wait for the current response.');
   conversation = [];
- messages.innerHTML = document.querySelector('#messages').dataset.emptyHtml || `
-  <div class="empty-chat">
-    <img src="/assets/elanova-mascot.png" alt="ELANOVA mascot">
-    <h2>What can we create today?</h2>
-    <p>Bring your ideas to life, one conversation at a time.</p>
-    <div class="suggestions">
-      <button data-prompt="Help me plan a new project">Plan a project ↗</button>
-      <button data-prompt="Give me creative ideas for a brand">Explore ideas ↗</button>
-      <button data-prompt="Help me write a professional introduction">Write something ↗</button>
+  messages.innerHTML = `
+    <div class="empty-chat">
+      <img src="/assets/elanova-mascot.png" alt="ELANOVA mascot">
+      <h2>What can we create today?</h2>
+      <p>Bring your ideas to life, one conversation at a time.</p>
+      <div class="suggestions">
+        <button data-prompt="Help me plan a new project">Plan a project &rarr;</button>
+        <button data-prompt="Give me creative ideas for a brand">Explore ideas &rarr;</button>
+        <button data-prompt="Help me write a professional introduction">Write something &rarr;</button>
+      </div>
     </div>
-  </div>
-`;<img src="/assets/elanova-mascot.png" alt="Ã‰LANOVA mascot"><h2>What can we create today?</h2><p>Bring your ideas to life, one conversation at a time.</p><div class="suggestions"><button data-prompt="Help me plan a new project">Plan a project â†—</button><button data-prompt="Give me creative ideas for a brand">Explore ideas â†—</button><button data-prompt="Help me write a professional introduction">Write something â†—</button></div></div>';
+  `;
   $('sidebar').classList.remove('open');
   prompt.focus();
 }
+
 $('new-chat').addEventListener('click', resetChat);
 function addBubble(text, role) {
   const el = document.createElement('div');
