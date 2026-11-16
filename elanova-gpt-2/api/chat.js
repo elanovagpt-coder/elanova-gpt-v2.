@@ -64,7 +64,7 @@ export default async function handler(req, res) {
           "Content-Type": "application/json",
           "x-goog-api-key": apiKey
         },
-        signal: AbortSignal.timeout(20000),
+signal: AbortSignal.timeout(45000),
         body: JSON.stringify({
           systemInstruction: {
             parts: [{ text: instructions }]
