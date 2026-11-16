@@ -55,7 +55,7 @@ export default async function handler(req, res) {
         !["user", "assistant"].includes(m.role) ||
         typeof m.content !== "string" ||
         !m.content.trim() ||
-        m.content.length > 4000
+        m.content.length > (m.role === "assistant" ? 20000 : 4000)
     )
   ) {
     return res.status(400).json({
