@@ -35,9 +35,18 @@ $('tools').addEventListener('click', () => notify('AI Tools are planned for a fu
 function resetChat() {
   if (busy) return notify('Please wait for the current response.');
   conversation = [];
-  Plan a project &rarr;
-Explore ideas &rarr;
-Write something &rarr;<img src="/assets/elanova-mascot.png" alt="Ã‰LANOVA mascot"><h2>What can we create today?</h2><p>Bring your ideas to life, one conversation at a time.</p><div class="suggestions"><button data-prompt="Help me plan a new project">Plan a project â†—</button><button data-prompt="Give me creative ideas for a brand">Explore ideas â†—</button><button data-prompt="Help me write a professional introduction">Write something â†—</button></div></div>';
+ messages.innerHTML = document.querySelector('#messages').dataset.emptyHtml || `
+  <div class="empty-chat">
+    <img src="/assets/elanova-mascot.png" alt="ELANOVA mascot">
+    <h2>What can we create today?</h2>
+    <p>Bring your ideas to life, one conversation at a time.</p>
+    <div class="suggestions">
+      <button data-prompt="Help me plan a new project">Plan a project ↗</button>
+      <button data-prompt="Give me creative ideas for a brand">Explore ideas ↗</button>
+      <button data-prompt="Help me write a professional introduction">Write something ↗</button>
+    </div>
+  </div>
+`;<img src="/assets/elanova-mascot.png" alt="Ã‰LANOVA mascot"><h2>What can we create today?</h2><p>Bring your ideas to life, one conversation at a time.</p><div class="suggestions"><button data-prompt="Help me plan a new project">Plan a project â†—</button><button data-prompt="Give me creative ideas for a brand">Explore ideas â†—</button><button data-prompt="Help me write a professional introduction">Write something â†—</button></div></div>';
   $('sidebar').classList.remove('open');
   prompt.focus();
 }
