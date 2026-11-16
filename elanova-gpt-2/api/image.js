@@ -1,15 +1,14 @@
 
-const { InferenceClient } = require("@huggingface/inference");
+import { InferenceClient } from "@huggingface/inference";
 
+const MODEL = "black-forest-labs/FLUX.1-dev";
 const MAX_PROMPT_LENGTH = 2000;
-
-// Limite simple par instance du serveur.
-// Ce n'est pas une protection globale contre les abus.
-const recentRequests = new Map();
-const WINDOW_MS = 60 * 60 * 1000;
 const MAX_REQUESTS = 2;
+const WINDOW_MS = 60 * 60 * 1000;
 
-module.exports = async function handler(req, res) {
+const recentRequests = new Map();
+
+export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
 
   if (req.method !== "POST") {
@@ -21,7 +20,7 @@ module.exports = async function handler(req, res) {
 
   if (!process.env.HF_TOKEN) {
     return res.status(503).json({
-      error: "Image service is not configured."
+      error: "Hugging Face is not configured."
     });
   }
 
@@ -37,9 +36,8 @@ module.exports = async function handler(req, res) {
     });
   }
 
-  // Limitation indicative par IP.
-  // Pour une protection fiable en production,
-  // utiliser un stockage partagé et une authentification.
+  // Basic per-instance limit.
+  // This does not provide global rate limiting.
   const ip = String(
     req.headers["x-forwarded-for"] || "unknown"
   ).split(",")[0].trim();
@@ -52,27 +50,22 @@ module.exports = async function handler(req, res) {
 
   if (active.length >= MAX_REQUESTS) {
     return res.status(429).json({
-      error: "Image limit reached. Please try again later."
+      error: "Image limit reached. Try again later."
     });
   }
 
   active.push(now);
   recentRequests.set(ip, active);
 
-  // Nettoyage de la mémoire.
   if (recentRequests.size > 1000) {
-    for (const [key, times] of recentRequests) {
-      if (times.every(time => now - time >= WINDOW_MS)) {
-        recentRequests.delete(key);
-      }
-    }
+    recentRequests.clear();
   }
 
   try {
     const client = new InferenceClient(process.env.HF_TOKEN);
 
     const imageBlob = await client.textToImage({
-      model: "black-forest-labs/FLUX.1-dev",
+      model: MODEL,
       inputs: prompt.trim()
     });
 
@@ -96,18 +89,16 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    const image = `data:${contentType};base64,${buffer.toString("base64")}`;
-
-    return res.status(200).json({ image });
+    return res.status(200).json({
+      image: `data:${contentType};base64,${buffer.toString("base64")}`
+    });
 
   } catch (error) {
-    console.error(
-      "ELANOVA image generation error:",
-      error.message
-    );
+    console.error("Image generation error:", error.message);
 
     return res.status(503).json({
-      error: "Image generation unavailable. Check your Hugging Face credits and model access."
+      error: "Image generation unavailable. Check Hugging Face credits and model access."
     });
   }
-};
+}
+
