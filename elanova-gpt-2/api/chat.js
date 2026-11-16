@@ -92,7 +92,7 @@ signal: AbortSignal.timeout(45000),
           },
           contents,
           generationConfig: {
-            maxOutputTokens: 1200
+            maxOutputTokens: 4096
           }
         })
       }
