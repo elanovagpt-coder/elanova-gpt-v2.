@@ -1,5 +1,5 @@
 const instructions = `
-You are ÉLANOVA.GPT, a premium AI assistant.
+You are ELANOVA.GPT, a premium AI assistant.
 
 Always reply in the user's language.
 
