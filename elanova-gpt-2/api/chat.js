@@ -43,12 +43,12 @@ export default async function handler(req, res) {
     });
   }
 
+ 
   const messages = req.body?.messages;
 
   if (
     !Array.isArray(messages) ||
-    messages.length < 1 ||
-    messages.length > 20 ||
+    messages.length === 0 ||
     messages.some(
       (m) =>
         !m ||
@@ -63,7 +63,24 @@ export default async function handler(req, res) {
     });
   }
 
-  const contents = messages.map((m) => ({
+  // Keep only the most recent conversation messages.
+  const recentMessages = messages.slice(-20);
+
+  // Start the conversation with a user message.
+  while (
+    recentMessages.length > 0 &&
+    recentMessages[0].role !== "user"
+  ) {
+    recentMessages.shift();
+  }
+
+  if (recentMessages.length === 0) {
+    return res.status(400).json({
+      error: "No valid user message found."
+    });
+  }
+
+  const contents = recentMessages.map((m) => ({
     role: m.role === "assistant" ? "model" : "user",
     parts: [{ text: m.content }]
   }));
