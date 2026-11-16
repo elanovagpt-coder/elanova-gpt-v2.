@@ -59,7 +59,16 @@ $('composer').addEventListener('submit', async (event) => {
   messages.querySelector('.empty-chat')?.remove();
   addBubble(text, 'user');
   prompt.value = '';
-  const pending = addBubble('Ã‰LANOVA is thinkingâ€¦', 'assistant');
+ 
+const pending = addBubble('', 'assistant');
+pending.classList.add('thinking');
+pending.innerHTML = `
+  <span class="thinking-label">ÉLANOVA</span>
+  <span class="thinking-dots">
+    <i></i><i></i><i></i>
+  </span>
+`;
+
   const requestMessages = [...conversation, { role: 'user', content: text }].slice(-20);
   try {
     const response = await fetch('/api/chat', {
