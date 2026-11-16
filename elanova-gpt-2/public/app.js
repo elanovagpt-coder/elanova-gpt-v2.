@@ -79,7 +79,8 @@ pending.innerHTML = `
     const data = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(data.error || `Server error (${response.status})`);
     if (!data.reply || typeof data.reply !== 'string') throw new Error('No AI response received.');
-    pending.textContent = data.reply;
+   pending.classList.remove('thinking');
+pending.textContent = data.reply;
     conversation = [...requestMessages, { role: 'assistant', content: data.reply }].slice(-20);
   } catch (error) {
     pending.textContent = 'Connection unavailable. Please try again.';
