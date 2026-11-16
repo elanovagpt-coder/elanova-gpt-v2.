@@ -63,7 +63,7 @@ $('composer').addEventListener('submit', async (event) => {
 const pending = addBubble('', 'assistant');
 pending.classList.add('thinking');
 pending.innerHTML = `
-  <span class="thinking-label">ÉLANOVA</span>
+  <span class="thinking-label">ELANOVA</span>
   <span class="thinking-dots">
     <i></i><i></i><i></i>
   </span>
