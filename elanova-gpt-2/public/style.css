@@ -108,3 +108,101 @@
     max-width: 100%;
   }
 }
+
+/* ELANOVA - Professional Markdown rendering */
+
+.bubble.assistant.markdown-content {
+  white-space: normal;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4 {
+  color: #f4f9ff;
+  line-height: 1.35;
+  margin: 24px 0 12px;
+  font-weight: 750;
+}
+
+.markdown-content h1 { font-size: 24px; }
+.markdown-content h2 { font-size: 20px; }
+.markdown-content h3 { font-size: 17px; }
+
+.markdown-content p {
+  margin: 10px 0;
+}
+
+.markdown-content strong {
+  color: #ffffff;
+  font-weight: 750;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  padding-left: 24px;
+  margin: 12px 0;
+}
+
+.markdown-content li {
+  margin: 6px 0;
+}
+
+.markdown-content pre {
+  background: #080f1e;
+  border: 1px solid #263c5c;
+  padding: 16px;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.markdown-content code {
+  font-family: monospace;
+  background: #0a1729;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.markdown-content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.markdown-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 18px 0;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid #304967;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.markdown-content th {
+  background: #173251;
+  color: #ffffff;
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid #38bdf8;
+  margin: 16px 0;
+  padding: 8px 16px;
+  color: #a9c9e9;
+}
+
+.markdown-content > :first-child {
+  margin-top: 0;
+}
+
+.markdown-content > :last-child {
+  margin-bottom: 0;
+}
