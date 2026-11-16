@@ -80,7 +80,16 @@ pending.innerHTML = `
     if (!response.ok) throw new Error(data.error || `Server error (${response.status})`);
     if (!data.reply || typeof data.reply !== 'string') throw new Error('No AI response received.');
    pending.classList.remove('thinking');
-pending.textContent = data.reply;
+
+
+if (window.marked && window.DOMPurify) {
+  pending.innerHTML = DOMPurify.sanitize(
+    marked.parse(data.reply)
+  );
+  pending.classList.add('markdown-content');
+} else {
+  pending.textContent = data.reply;
+}
     conversation = [...requestMessages, { role: 'assistant', content: data.reply }].slice(-20);
   } catch (error) {
     pending.textContent = 'Connection unavailable. Please try again.';
