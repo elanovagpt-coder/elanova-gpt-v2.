@@ -31,7 +31,11 @@ $('back-home').addEventListener('click', showWelcome);
 $('open-menu').addEventListener('click', () => $('sidebar').classList.add('open'));
 $('close-menu').addEventListener('click', () => $('sidebar').classList.remove('open'));
 $('projects').addEventListener('click', () => notify('Projects will be available after account setup.'));
-$('tools').addEventListener('click', () => notify('AI Tools are planned for a future update.'));
+
+$('generate-image').addEventListener('click', () => {
+  notify('ELANOVA Image Studio is coming online!');
+});
+
 
 function resetChat() {
   if (busy) return notify('Please wait for the current response.');
