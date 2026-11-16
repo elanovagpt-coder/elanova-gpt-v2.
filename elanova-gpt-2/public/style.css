@@ -58,3 +58,53 @@
     opacity: 0.8;
   }
 }
+
+/* ELANOVA - Chat layout improvements */
+
+.main-area {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.messages {
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  align-items: stretch;
+  scroll-behavior: smooth;
+}
+
+.bubble {
+  flex-shrink: 0;
+  height: auto;
+  min-height: fit-content;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.bubble.user {
+  width: fit-content;
+  max-width: 85%;
+  margin-left: auto;
+}
+
+.bubble.assistant {
+  width: fit-content;
+  max-width: 100%;
+  margin-right: auto;
+}
+
+.composer,
+.chat-footnote {
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .bubble.user {
+    max-width: 95%;
+  }
+
+  .bubble.assistant {
+    max-width: 100%;
+  }
+}
