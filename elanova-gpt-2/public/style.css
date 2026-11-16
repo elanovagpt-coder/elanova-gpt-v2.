@@ -206,3 +206,91 @@
 .markdown-content > :last-child {
   margin-bottom: 0;
 }
+
+/* ELANOVA.GPT - Futuristic workspace V2 */
+
+.workspace {
+  background:
+    radial-gradient(ellipse at 58% 40%,
+      rgba(0, 100, 255, 0.12),
+      transparent 58%),
+    #050b18;
+}
+
+.main-area {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Futuristic background lighting */
+.main-area::before {
+  content: "";
+  position: absolute;
+  inset: 70px 0 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 38%,
+      rgba(0, 125, 255, 0.18),
+      transparent 45%),
+    radial-gradient(ellipse at 85% 90%,
+      rgba(0, 170, 255, 0.10),
+      transparent 45%),
+    linear-gradient(135deg,
+      transparent 25%,
+      rgba(0, 125, 255, 0.035) 55%,
+      transparent 80%);
+}
+
+/* Futuristic sidebar */
+.sidebar {
+  background:
+    linear-gradient(160deg,
+      rgba(10, 32, 65, 0.98),
+      rgba(5, 12, 28, 0.98));
+  border-right: 1px solid rgba(38, 145, 255, 0.28);
+  box-shadow: 5px 0 35px rgba(0, 90, 255, 0.06);
+}
+
+.new-chat {
+  background: linear-gradient(110deg, #10325b, #12477e);
+  border: 1px solid rgba(64, 170, 255, 0.55);
+  box-shadow: 0 0 20px rgba(0, 140, 255, 0.08);
+  transition: 0.2s ease;
+}
+
+.new-chat:hover {
+  border-color: #46baff;
+  box-shadow: 0 0 24px rgba(0, 145, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.side-item.active {
+  background: linear-gradient(90deg, #123c6a, #102642);
+  border: 1px solid rgba(55, 150, 255, 0.25);
+  box-shadow: inset 3px 0 #2caaff;
+}
+
+.side-item:not(.active):hover {
+  background: rgba(26, 91, 158, 0.25);
+}
+
+.chat-top {
+  background: rgba(5, 12, 27, 0.78);
+  border-bottom: 1px solid rgba(45, 115, 195, 0.22);
+}
+
+.empty-chat img {
+  filter: drop-shadow(0 0 30px rgba(0, 140, 255, 0.65));
+}
+
+.suggestions button {
+  border: 1px solid rgba(50, 155, 255, 0.42);
+  background: rgba(9, 30, 58, 0.75);
+  transition: 0.2s ease;
+}
+
+.suggestions button:hover {
+  background: rgba(14, 62, 115, 0.8);
+  box-shadow: 0 0 20px rgba(0, 140, 255, 0.18);
+}
