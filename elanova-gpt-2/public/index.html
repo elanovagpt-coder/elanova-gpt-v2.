@@ -73,6 +73,34 @@
     </footer>
   </section>
 
+<!-- ELANOVA AUTH MODAL -->
+<div id="auth-modal" class="auth-modal hidden">
+  <div class="auth-panel">
+    <button id="auth-close" type="button" class="auth-close">✕</button>
+
+    <div class="auth-logo">✦ ELANOVA<span>.GPT</span></div>
+    <h2 id="auth-title">Welcome back</h2>
+    <p id="auth-description">Sign in to your ELANOVA account.</p>
+
+    <form id="auth-form">
+      <label for="auth-email">Email address</label>
+      <input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com" required>
+
+      <label for="auth-password">Password</label>
+      <input id="auth-password" type="password" autocomplete="current-password" placeholder="Your password" minlength="8" required>
+
+      <p id="auth-error" class="auth-error hidden"></p>
+
+      <button id="auth-submit" type="submit" class="auth-submit">Log In</button>
+    </form>
+
+    <p class="auth-switch">
+      <span id="auth-switch-label">Don't have an account?</span>
+      <button id="auth-toggle" type="button">Sign Up</button>
+    </p>
+  </div>
+</div>
+
   <!-- EXISTING WORKSPACE -->
   <section id="workspace" class="workspace hidden">
 
