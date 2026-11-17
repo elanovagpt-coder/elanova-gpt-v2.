@@ -1159,11 +1159,14 @@ button {
   text-align: center;
 }
 
-/* ELANOVA — ROBOT BLINK ANIMATION */
+
+/* ELANOVA — BLINK FIX */
 
 .mascot-blink {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .mascot-blink .mascot {
@@ -1172,32 +1175,31 @@ button {
 
 .blink-eyes {
   position: absolute;
-  top: 52%;
+  top: 54%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  gap: 22px;
+  gap: 20px;
+  z-index: 10;
   pointer-events: none;
 }
 
 .blink-eye {
-  width: 15px;
-  height: 29px;
-  border-radius: 50%;
-  background: #080c16;
+  width: 19px;
+  height: 36px;
+  border-radius: 12px;
+  background: #05070d;
+  box-shadow: 0 0 5px #05070d;
   opacity: 0;
-  animation: elanovaBlink 5s infinite;
+  animation: elanovaBlinkFix 4s infinite;
 }
 
-@keyframes elanovaBlink {
-  0%, 91%, 95%, 100% {
+@keyframes elanovaBlinkFix {
+  0%, 88%, 94%, 100% {
     opacity: 0;
-    transform: scaleY(0);
   }
 
-  92%, 94% {
+  90%, 92% {
     opacity: 1;
-    transform: scaleY(1);
   }
 }
-
