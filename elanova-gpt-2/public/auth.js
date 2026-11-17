@@ -125,3 +125,50 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+/* ELANOVA.GPT — User profile and logout */
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const db = window.elanovaSupabase;
+  if (!db) return;
+
+  const userName = document.getElementById("user-name");
+  const userEmail = document.getElementById("user-email");
+  const avatar = document.getElementById("user-avatar");
+  const logoutBtn = document.getElementById("logout-btn");
+
+  function updateProfile(user) {
+    if (user) {
+      const email = user.email || "";
+
+      userName.textContent = email.split("@")[0] || "User";
+      userEmail.textContent = email;
+      avatar.textContent = email.charAt(0).toUpperCase() || "E";
+      logoutBtn.hidden = false;
+    } else {
+      userName.textContent = "Guest preview";
+      userEmail.textContent = "Not signed in";
+      avatar.textContent = "E";
+      logoutBtn.hidden = true;
+    }
+  }
+
+  const { data: { session } } = await db.auth.getSession();
+  updateProfile(session?.user);
+
+  db.auth.onAuthStateChange((_event, session) => {
+    updateProfile(session?.user);
+  });
+
+  logoutBtn?.addEventListener("click", async () => {
+    const { error } = await db.auth.signOut();
+
+    if (error) {
+      alert("Unable to log out: " + error.message);
+      return;
+    }
+
+    updateProfile(null);
+    alert("You have been logged out.");
+  });
+});
