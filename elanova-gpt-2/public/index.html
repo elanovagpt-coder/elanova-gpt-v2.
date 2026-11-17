@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,11 +11,10 @@
 </head>
 <body>
 
-  <!-- NEW ANIMATED WELCOME PAGE -->
-  <section id="welcome" class="welcome elanova-home">
+  <!-- ORIGINAL WELCOME PAGE -->
+  <section id="welcome" class="welcome">
     <div class="ambient ambient-a"></div>
     <div class="ambient ambient-b"></div>
-    <div class="home-stars" aria-hidden="true"></div>
 
     <header class="topbar">
       <a href="/" class="brand">
@@ -27,124 +27,46 @@
       </span>
     </header>
 
-    <main class="home-layout">
-
-      <!-- LEFT: INTRODUCTION -->
-      <div class="home-intro">
-        <p class="eyebrow">THE NEXT CREATIVE INTELLIGENCE</p>
-
-        <h1>
-          WELCOME TO
-          <span>ELANOVA.GPT</span>
-        </h1>
-
-        <p class="tagline">Imagine. Create. Build.</p>
-
-        <p class="description">
-          Your creative space powered by AI.
-          Explore ideas, writing, code, images and
-          ambitious projects.
-        </p>
-
-        <div class="hero-actions">
-          <button class="primary" id="get-started">
-            Get Started <span>↗</span>
-          </button>
-          <button class="secondary" id="login">
-            Log In
-          </button>
-        </div>
-
-        <p class="demo-note">
-          Preview version · More tools coming soon
-        </p>
+    <main class="hero">
+      <div class="orbital">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <img
+          class="mascot"
+          src="/assets/elanova-mascot.png"
+          alt="ELANOVA blue robot mascot"
+        >
       </div>
 
-      <!-- CENTER: ANIMATED ROBOT -->
-      <div class="home-robot-scene">
-        <div class="home-globe"></div>
-        <div class="home-energy-ring ring-a"></div>
-        <div class="home-energy-ring ring-b"></div>
-        <div class="home-energy-ring ring-c"></div>
+      <p class="eyebrow">YOUR IDEAS. WITHOUT LIMITS.</p>
 
-        <div class="home-robot">
-          <img
-            src="/assets/elanova-mascot.png"
-            alt="ELANOVA AI robot"
-          >
-        </div>
+      <h1>WELCOME TO <span>ELANOVA.GPT</span></h1>
 
-        <div class="home-platform">
-          <span>ELANOVA.GPT</span>
-        </div>
+      <p class="tagline">Imagine. Create. Build.</p>
 
-        <div class="home-floating-symbol symbol-a">✦</div>
-        <div class="home-floating-symbol symbol-b">◇</div>
-        <div class="home-floating-symbol symbol-c">✧</div>
+      <p class="description">
+        Your creative space for ideas, writing, code,
+        and ambitious projects.
+      </p>
+
+      <div class="hero-actions">
+        <button class="primary" id="get-started">
+          Get Started <span>↗</span>
+        </button>
+
+        <button class="secondary" id="login">
+          Log In
+        </button>
       </div>
 
-      <!-- RIGHT: FEATURES -->
-      <div class="home-features">
-        <div class="home-feature">
-          <span class="home-feature-icon">◈</span>
-          <span>
-            <strong>AI Chat</strong>
-            <small>Ask. Explore. Create.</small>
-          </span>
-          <span class="home-feature-arrow">↗</span>
-        </div>
-
-        <div class="home-feature">
-          <span class="home-feature-icon">▧</span>
-          <span>
-            <strong>Images &amp; Design</strong>
-            <small>AI image creation</small>
-          </span>
-          <span class="home-feature-arrow">✦</span>
-        </div>
-
-        <div class="home-feature">
-          <span class="home-feature-icon">♫</span>
-          <span>
-            <strong>Music &amp; Audio</strong>
-            <small>Coming soon</small>
-          </span>
-          <span class="home-feature-arrow">✧</span>
-        </div>
-
-        <div class="home-feature">
-          <span class="home-feature-icon">▷</span>
-          <span>
-            <strong>Video Studio</strong>
-            <small>Coming soon</small>
-          </span>
-          <span class="home-feature-arrow">✧</span>
-        </div>
-
-        <div class="home-feature">
-          <span class="home-feature-icon">⬡</span>
-          <span>
-            <strong>3D Fashion Studio</strong>
-            <small>Coming soon</small>
-          </span>
-          <span class="home-feature-arrow">✧</span>
-        </div>
-
-        <div class="home-feature">
-          <span class="home-feature-icon">⌘</span>
-          <span>
-            <strong>Code &amp; Projects</strong>
-            <small>Build with AI</small>
-          </span>
-          <span class="home-feature-arrow">↗</span>
-        </div>
-      </div>
-
+      <p class="demo-note">
+        Preview version · Accounts coming soon
+      </p>
     </main>
 
     <footer class="footer">
       <span>© 2026 ELANOVA.GPT</span>
-      <span>IMAGINE · CREATE · BUILD</span>
+      <span>BUILT FOR WHAT'S NEXT</span>
     </footer>
   </section>
 
@@ -157,8 +79,11 @@
           <span class="brand-mark">✦</span>
           ELANOVA<span>.GPT</span>
         </div>
-        <button class="icon-btn" id="close-menu"
-                aria-label="Close menu">✕</button>
+        <button
+          class="icon-btn"
+          id="close-menu"
+          aria-label="Close menu"
+        >✕</button>
       </div>
 
       <button class="new-chat" id="new-chat">
@@ -201,9 +126,11 @@
 
     <div class="main-area">
       <header class="chat-top">
-        <button class="icon-btn menu-btn"
-                id="open-menu"
-                aria-label="Open menu">☰</button>
+        <button
+          class="icon-btn menu-btn"
+          id="open-menu"
+          aria-label="Open menu"
+        >☰</button>
 
         <span>ELANOVA.GPT <small>PREVIEW</small></span>
 
@@ -215,19 +142,27 @@
       <!-- CHAT -->
       <div id="messages" class="messages">
         <div class="empty-chat">
-          <img src="/assets/elanova-mascot.png"
-               alt="ELANOVA mascot">
+          <img
+            src="/assets/elanova-mascot.png"
+            alt="ELANOVA mascot"
+          >
 
           <h2>What can we create today?</h2>
-          <p>Bring your ideas to life, one conversation at a time.</p>
+
+          <p>
+            Bring your ideas to life,
+            one conversation at a time.
+          </p>
 
           <div class="suggestions">
             <button data-prompt="Help me plan a new project">
               Plan a project ↗
             </button>
+
             <button data-prompt="Give me creative ideas for a brand">
               Explore ideas ↗
             </button>
+
             <button data-prompt="Help me write a professional introduction">
               Write something ↗
             </button>
@@ -244,7 +179,9 @@
         </div>
 
         <form id="image-form" class="image-studio-panel">
-          <label for="image-prompt">Describe your image</label>
+          <label for="image-prompt">
+            Describe your image
+          </label>
 
           <textarea
             id="image-prompt"
@@ -253,16 +190,22 @@
             placeholder="Describe the image you want to create..."
           ></textarea>
 
-          <button type="submit" class="image-generate-btn">
+          <button
+            type="submit"
+            class="image-generate-btn"
+          >
             ✦ Generate Image
           </button>
         </form>
 
-        <div id="image-result"
-             class="image-result"
-             aria-live="polite"></div>
+        <div
+          id="image-result"
+          class="image-result"
+          aria-live="polite"
+        ></div>
       </section>
 
+      <!-- CHAT COMPOSER -->
       <form id="composer" class="composer">
         <textarea
           id="prompt"
@@ -271,9 +214,10 @@
           aria-label="Message"
         ></textarea>
 
-        <button type="submit" aria-label="Send message">
-          ↑
-        </button>
+        <button
+          type="submit"
+          aria-label="Send message"
+        >↑</button>
       </form>
 
       <p class="chat-footnote">
@@ -282,15 +226,20 @@
     </div>
   </section>
 
-  <div id="toast"
-       class="toast"
-       role="status"
-       aria-live="polite"></div>
+  <!-- NOTIFICATIONS -->
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
 
+  <!-- MARKDOWN SUPPORT -->
   <script src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+
+  <!-- ELANOVA JAVASCRIPT -->
   <script src="/app.js"></script>
 
 </body>
 </html>
-
