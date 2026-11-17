@@ -828,3 +828,101 @@ button {
   }
 }
 
+/* ELANOVA.GPT — ADVANCED ROBOT ANIMATIONS */
+
+/* Robot container */
+.empty-chat {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Blue energy aura */
+.empty-chat::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 140, 255, .25) 0%,
+    rgba(0, 100, 255, .10) 45%,
+    transparent 72%
+  );
+  transform: translate(-50%, -95%);
+  pointer-events: none;
+  animation: elanovaAura 4s ease-in-out infinite;
+}
+
+/* Rotating energy ring */
+.empty-chat img {
+  position: relative;
+  z-index: 2;
+}
+
+.empty-chat::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 205px;
+  height: 205px;
+  border: 1px solid rgba(0, 190, 255, .35);
+  border-top: 2px solid #36caff;
+  border-bottom: 2px solid #007bff;
+  border-radius: 50%;
+  box-shadow: 0 0 22px rgba(0, 150, 255, .20);
+  transform: translate(-50%, -125%) rotate(0deg);
+  pointer-events: none;
+  animation: elanovaEnergyRing 12s linear infinite;
+}
+
+/* More fluid robot movement */
+.empty-chat img {
+  animation: elanovaSuperFloat 5s ease-in-out infinite;
+}
+
+@keyframes elanovaSuperFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+    filter: drop-shadow(0 0 20px rgba(0,150,255,.4));
+  }
+  50% {
+    transform: translateY(-16px) rotate(2deg);
+    filter: drop-shadow(0 0 45px rgba(0,180,255,.85));
+  }
+}
+
+@keyframes elanovaAura {
+  0%, 100% {
+    opacity: .5;
+    scale: .85;
+  }
+  50% {
+    opacity: 1;
+    scale: 1.2;
+  }
+}
+
+@keyframes elanovaEnergyRing {
+  from {
+    transform: translate(-50%, -125%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -125%) rotate(360deg);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .empty-chat::before,
+  .empty-chat::after,
+  .empty-chat img {
+    animation: none !important;
+  }
+}
+
