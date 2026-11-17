@@ -981,4 +981,21 @@ button {
   }
 }
 
+/* ELANOVA.GPT — FOUNDER SIGNATURE */
+
+.founder-credit {
+  margin-top: 24px;
+  color: #718cac;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.founder-credit span {
+  color: #42baff;
+  font-weight: 850;
+  text-shadow: 0 0 15px rgba(0, 150, 255, .35);
+}
+
 
