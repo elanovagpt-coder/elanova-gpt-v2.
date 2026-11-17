@@ -1203,3 +1203,25 @@ button {
     opacity: 1;
   }
 }
+
+/* ELANOVA — RESTORE ROBOT POSITION */
+
+.mascot-blink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.mascot-blink .mascot {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+.blink-eyes {
+  display: none !important;
+}
+
