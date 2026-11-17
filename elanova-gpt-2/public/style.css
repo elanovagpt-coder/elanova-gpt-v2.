@@ -801,3 +801,30 @@ button {
     animation: none;
   }
 }
+
+/* ELANOVA.GPT — ANIMATED ROBOT */
+
+.empty-chat img {
+  transform-origin: center;
+  animation: elanovaRobot 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 25px rgba(0, 150, 255, .45));
+}
+
+@keyframes elanovaRobot {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    filter: drop-shadow(0 0 20px rgba(0, 150, 255, .35));
+  }
+
+  50% {
+    transform: translateY(-14px) rotate(2deg);
+    filter: drop-shadow(0 0 42px rgba(0, 170, 255, .8));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .empty-chat img {
+    animation: none;
+  }
+}
+
