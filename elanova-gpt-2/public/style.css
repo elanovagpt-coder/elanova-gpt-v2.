@@ -1159,3 +1159,45 @@ button {
   text-align: center;
 }
 
+/* ELANOVA — ROBOT BLINK ANIMATION */
+
+.mascot-blink {
+  position: relative;
+  display: inline-block;
+}
+
+.mascot-blink .mascot {
+  display: block;
+}
+
+.blink-eyes {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 22px;
+  pointer-events: none;
+}
+
+.blink-eye {
+  width: 15px;
+  height: 29px;
+  border-radius: 50%;
+  background: #080c16;
+  opacity: 0;
+  animation: elanovaBlink 5s infinite;
+}
+
+@keyframes elanovaBlink {
+  0%, 91%, 95%, 100% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  92%, 94% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
